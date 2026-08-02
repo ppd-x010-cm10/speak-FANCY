@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base target="_top">
+  <meta charset="UTF-8">
+  <meta name="description" content="Speak FANCY speaking practice app">
+  <meta name="theme-color" content="#1267d6">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <noscript>
+    <div class="noscript-message">
+      This app needs JavaScript. Please enable JavaScript and reload the page.
+    </div>
+  </noscript>
+
+  <div id="app" aria-live="polite">
+    <div class="loading-card">
+      <div class="loading-spinner" aria-hidden="true"></div>
+      <p>Preparing your speaking mission...</p>
+    </div>
+  </div>
+
+  <div
+    id="toast"
+    class="toast"
+    role="status"
+    aria-live="polite"
+    aria-atomic="true"
+  ></div>
+
+  <?!= include('Config'); ?>
+  <?!= include('Utils'); ?>
+  <?!= include('Storage'); ?>
+  <?!= include('Data'); ?>
+  <?!= include('Dashboard'); ?>
+  <script src="config.js"></script>
+<script src="utils.js"></script>
+<script src="storage.js"></script>
+<script src="data.js"></script>
+<script src="voicerecorder.js"></script>
+<script src="app.js"></script>
+  <?!= include('Introduction'); ?>
+  <?!= include('Part1'); ?>
+  <?!= include('Part2'); ?>
+  <?!= include('Part3'); ?>
+  <?!= include('App'); ?>
+<script src="config.js"></script>
+<script src="utils.js"></script>
+<script src="storage.js"></script>
+<script src="data.js"></script>
+<script src="dashboard.js"></script>
+<script src="introduction.js"></script>
+<script src="part1.js"></script>
+<script src="part2.js"></script>
+<script src="part3.js"></script>
+<script src="voicerecorder.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

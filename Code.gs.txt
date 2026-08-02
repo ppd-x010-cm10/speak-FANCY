@@ -1,0 +1,25 @@
+function doGet() {
+  return HtmlService
+    .createTemplateFromFile('Index')
+    .evaluate()
+    .setTitle('Speak FANCY')
+    .addMetaTag(
+      'viewport',
+      'width=device-width, initial-scale=1'
+    );
+}
+
+function include(filename) {
+  return HtmlService
+    .createHtmlOutputFromFile(filename)
+    .getContent();
+}
+
+function getAppHealth() {
+  return {
+    ok: true,
+    app: 'Speak FANCY',
+    version: '2.0.0',
+    serverTime: new Date().toISOString()
+  };
+}
