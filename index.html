@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="description" content="Speak FANCY speaking practice app">
   <meta name="theme-color" content="#1267d6">
-<link rel="stylesheet" href="Styles.css">
+  <link rel="stylesheet" href="Styles.css">
 </head>
 <body>
   <noscript>
@@ -29,33 +29,18 @@
     aria-atomic="true"
   ></div>
 
-  <?!= include('Config'); ?>
-  <?!= include('Utils'); ?>
-  <?!= include('Storage'); ?>
-  <?!= include('Data'); ?>
-  <?!= include('Dashboard'); ?>
+  <!-- App Scripts loaded in correct order -->
   <script src="Config.js"></script>
-<script src="Utils.js"></script>
-<script src="Storage.js"></script>
-<script src="speakFancyData.js"></script>
-<script src="Data.js"></script>
-<script src="Voicerecorder.js"></script>
-<script src="App.js"></script>
-  <?!= include('Introduction'); ?>
-  <?!= include('Part1'); ?>
-  <?!= include('Part2'); ?>
-  <?!= include('Part3'); ?>
-  <?!= include('App'); ?>
-<script src="Config.js"></script>
-<script src="Utils.js"></script>
-<script src="Storage.js"></script>
-<script src="Data.js"></script>
-<script src="Dashboard.js"></script>
-<script src="Introduction.js"></script>
-<script src="Part1.js"></script>
-<script src="Part2.js"></script>
-<script src="Part3.js"></script>
-<script src="Voicerecorder.js"></script>
-<script src="App.js"></script>
+  <script src="Utils.js"></script>
+  <script src="Storage.js"></script>
+  <script src="speakFancyData.js"></script>
+  <script src="Data.js"></script>
+  <script src="Voicerecorder.js"></script>
+  <script src="Dashboard.js"></script>
+  <script src="Introduction.js"></script>
+  <script src="Part1.js"></script>
+  <script src="Part2.js"></script>
+  <script src="Part3.js"></script>
+  <script src="App.js"></script>
 </body>
 </html>
