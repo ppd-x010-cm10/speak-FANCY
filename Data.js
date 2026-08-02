@@ -1,6 +1,9 @@
-const sampleData = {
-  // PART 1
-  part1: [
+// ==========================================
+// SPEAK FANCY DATA SET
+// ==========================================
+
+const SPEAK_FANCY_DATA = {
+  part1Lessons: [
     {
       id: "p1_set1",
       category: "School Life & Learning",
@@ -21,8 +24,7 @@ const sampleData = {
     }
   ],
 
-  // PART 2
-  part2: [
+  part2Lessons: [
     {
       id: "p2_var1",
       topic: "A Local Market or Place You Visit",
@@ -36,8 +38,7 @@ const sampleData = {
     }
   ],
 
-  // PART 3
-  part3: [
+  part3Lessons: [
     {
       id: "p3_var1",
       topic: "Ways Students Can Stay Healthy and Active",
@@ -54,20 +55,24 @@ const sampleData = {
   ]
 };
 
-// Create aliases so all possible property names work seamlessly
-sampleData.part1Lessons = sampleData.part1;
-sampleData.part2Lessons = sampleData.part2;
-sampleData.part3Lessons = sampleData.part3;
+// Add aliases for short property names
+SPEAK_FANCY_DATA.part1 = SPEAK_FANCY_DATA.part1Lessons;
+SPEAK_FANCY_DATA.part2 = SPEAK_FANCY_DATA.part2Lessons;
+SPEAK_FANCY_DATA.part3 = SPEAK_FANCY_DATA.part3Lessons;
 
-// Attach to all possible global window variables
-window.Data = sampleData;
-window.DATA = sampleData;
-window.speakFancyData = sampleData;
-window.SPEAK_FANCY_DATA = sampleData;
+// Assign to all possible global window variable names
+window.APP_DATA = SPEAK_FANCY_DATA;
+window.Data = SPEAK_FANCY_DATA;
+window.DATA = SPEAK_FANCY_DATA;
+window.speakFancyData = SPEAK_FANCY_DATA;
+window.SPEAK_FANCY_DATA = SPEAK_FANCY_DATA;
 
 if (typeof window.Config === "undefined") {
   window.Config = {};
 }
-window.Config.part1Lessons = sampleData.part1;
-window.Config.part2Lessons = sampleData.part2;
-window.Config.part3Lessons = sampleData.part3;
+window.Config.part1Lessons = SPEAK_FANCY_DATA.part1Lessons;
+window.Config.part2Lessons = SPEAK_FANCY_DATA.part2Lessons;
+window.Config.part3Lessons = SPEAK_FANCY_DATA.part3Lessons;
+window.Config.part1 = SPEAK_FANCY_DATA.part1Lessons;
+window.Config.part2 = SPEAK_FANCY_DATA.part2Lessons;
+window.Config.part3 = SPEAK_FANCY_DATA.part3Lessons;
