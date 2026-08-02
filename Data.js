@@ -156,14 +156,24 @@ const SPEAK_FANCY_DATA = {
   ]
 };
 
-// Add aliases for short property names
+// Aliases for short property names
 SPEAK_FANCY_DATA.part1 = SPEAK_FANCY_DATA.part1Lessons;
 SPEAK_FANCY_DATA.part2 = SPEAK_FANCY_DATA.part2Lessons;
 SPEAK_FANCY_DATA.part3 = SPEAK_FANCY_DATA.part3Lessons;
 
-// Assign globally
+// Assign globally to all possible variable variants
 window.APP_DATA = SPEAK_FANCY_DATA;
 window.Data = SPEAK_FANCY_DATA;
 window.DATA = SPEAK_FANCY_DATA;
 window.speakFancyData = SPEAK_FANCY_DATA;
 window.SPEAK_FANCY_DATA = SPEAK_FANCY_DATA;
+
+if (typeof window.Config === "undefined") {
+  window.Config = {};
+}
+window.Config.part1Lessons = SPEAK_FANCY_DATA.part1Lessons;
+window.Config.part2Lessons = SPEAK_FANCY_DATA.part2Lessons;
+window.Config.part3Lessons = SPEAK_FANCY_DATA.part3Lessons;
+window.Config.part1 = SPEAK_FANCY_DATA.part1Lessons;
+window.Config.part2 = SPEAK_FANCY_DATA.part2Lessons;
+window.Config.part3 = SPEAK_FANCY_DATA.part3Lessons;
