@@ -1,518 +1,161 @@
-
-SF.data = Object.freeze({
-  part1Questions: [
-    'What do you usually do after school?',
-    'What is your favourite school subject?',
-    'How do you spend your weekends?',
-    'Tell me about a hobby you enjoy.',
-    'What food do you enjoy eating?',
-    'How do you travel to school?',
-    'Who do you usually spend time with?',
-    'What place in Sabah would you recommend to a visitor?'
-  ],
-
-  transitions: [
-    'To begin with,',
-    'First of all,',
-    'For me,',
-    'In my opinion,',
-    'As for my daily routine,'
-  ],
-
-  detailStarters: {
-    Example: 'For example,',
-    Experience: 'From my experience,',
-    Situation: 'I usually do this when',
-    Reason: 'This is because'
-  },
-
-  part1Lessons: [
+const speakFancyData = {
+  // PART 1: INTERVIEW
+  part1: [
     {
-      title: 'Meet Part 1',
-      eyebrow: 'Mission 1 · Know the task',
-      body: `
-        <p>
-          In Part 1, you answer questions about yourself and familiar topics.
-          The full speaking test guide gives about 3–4 minutes for this part.
-        </p>
-        <div class="tip-box">
-          <strong>Your goal</strong>
-          <p>Understand the question and give a clear, relevant response.</p>
-        </div>
-      `
-    },
-    {
-      title: 'Build the TAD core',
-      eyebrow: 'Mission 2 · Structure',
-      body: `
-        <p>TAD gives each answer a simple path.</p>
-        <div class="tad-grid">
-          <article class="mini-card formula-t">
-            <h3>T — Transition</h3>
-            <p>Start naturally or move to a new point.</p>
-          </article>
-          <article class="mini-card formula-a">
-            <h3>A — Answer</h3>
-            <p>Respond directly to the question.</p>
-          </article>
-          <article class="mini-card formula-d">
-            <h3>D — Details</h3>
-            <p>Add a reason, example, experience, or situation.</p>
-          </article>
-        </div>
-      `
-    },
-    {
-      title: 'Use the basic speaking rule',
-      eyebrow: 'Mission 3 · Stronger answers',
-      body: `
-        <p>Avoid stopping after one word. Give a direct answer and add one useful detail.</p>
-        <div class="question-box">
-          <strong>Question:</strong>
-          <p>What is your favourite subject?</p>
-        </div>
-        <div class="feedback-box improve">
-          <strong>Too short:</strong>
-          <p>English.</p>
-        </div>
-        <div class="feedback-box good">
-          <strong>Stronger:</strong>
-          <p>My favourite subject is English because I enjoy learning new words.</p>
-        </div>
-      `
-    },
-    {
-      title: 'Grow the Details',
-      eyebrow: 'Mission 4 · REES choices',
-      body: `
-        <p>Choose one detail that supports your answer. You do not need every REES type.</p>
-        <div class="tad-grid">
-          <article class="mini-card"><h3>Research</h3><p>A reliable fact or accepted idea.</p></article>
-          <article class="mini-card"><h3>Example</h3><p>A clear example that shows your point.</p></article>
-          <article class="mini-card"><h3>Experience</h3><p>Something you did, saw, or felt.</p></article>
-          <article class="mini-card"><h3>Situation</h3><p>When, where, or with whom it happens.</p></article>
-        </div>
-      `
-    },
-    {
-      title: 'Powerful starters',
-      eyebrow: 'Mission 5 · Speak smoothly',
-      body: `
-        <p>Use a starter when it helps the answer sound clear. Do not force one into every short response.</p>
-        <div class="question-box">
-          <p><strong>Transitions:</strong> To begin with, · For me, · In my opinion, · As for my daily routine,</p>
-          <p><strong>Detail links:</strong> because · for example · when · with my friends</p>
-        </div>
-      `
-    },
-    {
-      title: 'Interview Challenge',
-      eyebrow: 'Mission 6 · Guided practice',
-      practice: true,
-      body: `<p>Build one complete Part 1 response. Then read it aloud.</p>`
-    }
-  ],
-
-  part2Prompts: [
-    {
-      topic: 'A useful gadget',
-      question: 'Talk about a useful gadget.',
-      prompts: [
-        'What is the gadget?',
-        'How often do you use it?',
-        'What do you use it for?',
-        'Why is it useful?'
+      id: "p1_set1",
+      category: "School Life & Learning",
+      questions: [
+        "What is your favorite subject at school?",
+        "How do you usually travel to school every day?",
+        "What school club or sport do you enjoy participating in?"
       ]
     },
     {
-      topic: 'A place you enjoy visiting',
-      question: 'Talk about a place you enjoy visiting.',
-      prompts: [
-        'What is the place?',
-        'Where is it?',
-        'What do you do there?',
-        'Why do you enjoy visiting it?'
+      id: "p1_set2",
+      category: "Free Time & Hobbies",
+      questions: [
+        "What activity do you enjoy doing during the weekend?",
+        "Do you prefer watching movies or listening to music in your free time?",
+        "What sport or game do you like to play with your friends?"
       ]
     },
     {
-      topic: 'An activity you enjoy',
-      question: 'Talk about an activity you enjoy.',
-      prompts: [
-        'What is the activity?',
-        'When do you do it?',
-        'Who do you do it with?',
-        'Why do you enjoy it?'
+      id: "p1_set3",
+      category: "Family & Community",
+      questions: [
+        "How do you usually help your parents or family at home?",
+        "How do you spend quality time with your family or cousins?",
+        "Have you ever participated in a community activity like a gotong-royong?"
       ]
     },
     {
-      topic: 'A person who inspires you',
-      question: 'Talk about a person who inspires you.',
-      prompts: [
-        'Who is the person?',
-        'How do you know this person?',
-        'What has this person done?',
-        'Why does this person inspire you?'
-      ]
-    },
-    {
-      topic: 'A local food you would recommend',
-      question: 'Talk about a local food you would recommend.',
-      prompts: [
-        'What is the food?',
-        'Where can people find it?',
-        'What does it taste like?',
-        'Why would you recommend it?'
+      id: "p1_set4",
+      category: "Daily Habits & Technology",
+      questions: [
+        "How often do you use your smartphone after school?",
+        "What local food do you enjoy eating with your family?",
+        "What place near your house do you like to visit when you want to relax?"
       ]
     }
   ],
 
-  part2Transitions: [
-    'To begin with,',
-    'Moving on,',
-    'Besides that,',
-    'Another important point is that',
-    'Finally,'
-  ],
-
-  part2DetailTypes: {
-    Research: 'Research or a generally accepted idea',
-    Example: 'A clear example or list',
-    Experience: 'Something you did, saw, or felt',
-    Situation: 'When, where, with whom, or under what circumstances'
-  },
-
-  part2Lessons: [
+  // PART 2: INDIVIDUAL LONG TURN
+  part2: [
     {
-      title: 'Meet Part 2',
-      eyebrow: 'Mission 1 · Understand the long turn',
-      body: `
-        <p>
-          In Part 2, you speak for a longer turn about one topic.
-          The speaking guide gives about 3–4 minutes for this part.
-        </p>
-        <div class="tip-box">
-          <strong>Your mission</strong>
-          <p>Answer every prompt, connect your ideas, and keep your response relevant.</p>
-        </div>
-      `
+      id: "p2_var1",
+      topic: "A Local Market or Place You Visit",
+      prompt: "Talk about a local place or market you enjoy visiting.",
+      subPrompts: [
+        "What the place is",
+        "Where it is located",
+        "Who you usually go there with",
+        "Why you enjoy visiting it"
+      ]
     },
     {
-      title: 'Turn one card into four small answers',
-      eyebrow: 'Mission 2 · Break down the task',
-      body: `
-        <p>
-          Do not try to create one long speech immediately.
-          Treat each prompt as one small TAD answer.
-        </p>
-        <div class="question-box">
-          <strong>Example topic:</strong>
-          <p>Talk about a useful gadget.</p>
-          <ol>
-            <li>What is it?</li>
-            <li>How often do you use it?</li>
-            <li>What do you use it for?</li>
-            <li>Why is it useful?</li>
-          </ol>
-        </div>
-      `
+      id: "p2_var2",
+      topic: "A Community Activity You Participated In",
+      prompt: "Talk about a community or school activity you participated in.",
+      subPrompts: [
+        "What the activity was",
+        "When and where it took place",
+        "What task or role you did",
+        "Why it was a memorable experience"
+      ]
     },
     {
-      title: 'Use TAD for every prompt',
-      eyebrow: 'Mission 3 · Build the core',
-      body: `
-        <p>For each prompt, use a transition, a direct answer, and a useful detail.</p>
-        <div class="tad-grid">
-          <article class="mini-card formula-t"><h3>T</h3><p>Show that you are starting or moving to a new prompt.</p></article>
-          <article class="mini-card formula-a"><h3>A</h3><p>Respond directly to the prompt.</p></article>
-          <article class="mini-card formula-d"><h3>D</h3><p>Develop the answer with support.</p></article>
-        </div>
-        <div class="feedback-box good">
-          <strong>Example:</strong>
-          <p>Moving on, I use my smartphone every day. It is useful after school when I need to check assignments.</p>
-        </div>
-      `
+      id: "p2_var3",
+      topic: "An Online Tool or App Used for Learning",
+      prompt: "Talk about an online platform or app you use for schoolwork.",
+      subPrompts: [
+        "What the app or platform is",
+        "How often you use it",
+        "What you use it for",
+        "Why it is helpful for your studies"
+      ]
     },
     {
-      title: 'Power up Details with REES',
-      eyebrow: 'Mission 4 · Expand ideas',
-      body: `
-        <p>
-          Choose one or two useful details for each prompt.
-          You do not need to use all four REES choices every time.
-        </p>
-        <div class="tad-grid">
-          <article class="mini-card"><h3>Research</h3><p>A relevant fact or generally accepted idea.</p></article>
-          <article class="mini-card"><h3>Example</h3><p>A clear example or list.</p></article>
-          <article class="mini-card"><h3>Experience</h3><p>Something you have done, seen, or felt.</p></article>
-          <article class="mini-card"><h3>Situation</h3><p>When, where, with whom, or under what circumstances.</p></article>
-        </div>
-      `
+      id: "p2_var4",
+      topic: "A Traditional Dish or Food You Recommend",
+      prompt: "Talk about a local food or dish you would recommend.",
+      subPrompts: [
+        "What the food is",
+        "What it tastes like",
+        "Where people can find or try it",
+        "Why you would recommend it"
+      ]
     },
     {
-      title: 'Use a planning card',
-      eyebrow: 'Mission 5 · Plan smart',
-      planner: true,
-      body: `
-        <p>
-          Write short notes, not a full memorised script.
-          Your notes should help you remember the key answer and one detail for each prompt.
-        </p>
-      `
-    },
-    {
-      title: 'Connect the long turn',
-      eyebrow: 'Mission 6 · Speak smoothly',
-      body: `
-        <p>Use varied transitions to move from one prompt to the next.</p>
-        <div class="question-box">
-          <p><strong>Useful sequence:</strong></p>
-          <p>To begin with, → Moving on, → Besides that, → Finally,</p>
-        </div>
-        <div class="tip-box">
-          <strong>Avoid repetition</strong>
-          <p>Do not begin every sentence with “And then”. Choose a transition that shows your direction.</p>
-        </div>
-      `
-    },
-    {
-      title: 'Build a full response',
-      eyebrow: 'Mission 7 · Guided rehearsal',
-      rehearsal: true,
-      body: `
-        <p>
-          Use your planning card to build four connected TAD answers.
-          The app will check structure, coverage, and connection.
-        </p>
-      `
-    },
-    {
-      title: 'Part 2 Boss Challenge',
-      eyebrow: 'Mission 8 · Speak with confidence',
-      challenge: true,
-      body: `
-        <p>
-          Complete one final long-turn plan and rehearse it aloud.
-          This practice does not provide an official SPM band.
-        </p>
-      `
+      id: "p2_var5",
+      topic: "A Useful Skill You Would Like to Learn",
+      prompt: "Talk about a useful skill you would like to master.",
+      subPrompts: [
+        "What the skill is",
+        "Why you want to learn it",
+        "How you plan to learn it",
+        "How it will help you in the future"
+      ]
     }
   ],
 
-  part3Topics: [
+  // PART 3: COLLABORATIVE DISCUSSION
+  part3: [
     {
-      title: 'Ways to encourage healthy living among teenagers',
-      options: [
-        'organise school sports activities',
-        'teach healthy food choices',
-        'reduce screen time',
-        'create family exercise routines',
-        'provide safe recreational spaces'
+      id: "p3_var1",
+      topic: "Ways Students Can Stay Healthy and Active",
+      centralQuestion: "What are the best ways students can maintain good health?",
+      mindMapBubbles: [
+        "Exercising regularly or playing sports",
+        "Eating balanced meals and avoiding fast food",
+        "Getting enough sleep every night",
+        "Drinking plenty of water daily",
+        "Reducing time spent on smartphone screens"
       ],
-      decisionQuestion: 'Which way would have the greatest impact?'
+      decisionPhase: "Decide together which is the most effective way for secondary school students to stay healthy."
     },
     {
-      title: 'Ways to make a school more environmentally friendly',
-      options: [
-        'reduce single-use plastic',
-        'plant more trees',
-        'save electricity',
-        'separate recyclable waste',
-        'organise awareness campaigns'
+      id: "p3_var2",
+      topic: "Ways Students Can Save Money",
+      centralQuestion: "What are the ways students can manage and save their money?",
+      mindMapBubbles: [
+        "Bringing home-cooked food to school",
+        "Using public transport or walking to school",
+        "Buying second-hand books or study materials",
+        "Tracking daily spending habits",
+        "Avoiding buying unnecessary items"
       ],
-      decisionQuestion: 'Which action should the school start first?'
+      decisionPhase: "Decide together which is the easiest way for students to start saving money."
     },
     {
-      title: 'Ways to help students improve their English',
-      options: [
-        'join an English club',
-        'watch suitable English videos',
-        'read short English texts',
-        'practise speaking with friends',
-        'use learning applications'
+      id: "p3_var3",
+      topic: "Ways to Protect the Local Environment",
+      centralQuestion: "How can local communities keep their area clean and green?",
+      mindMapBubbles: [
+        "Organizing regular gotong-royong activities",
+        "Using proper rubbish bins instead of littering",
+        "Reducing single-use plastics",
+        "Planting trees and flowers around homes",
+        "Recycling paper, plastic, and cans"
       ],
-      decisionQuestion: 'Which method is the most practical for students?'
+      decisionPhase: "Decide together which action brings the greatest benefit to the local environment."
     },
     {
-      title: 'Ways to support tourism in Sabah',
-      options: [
-        'promote local food',
-        'protect natural attractions',
-        'improve public information',
-        'support community businesses',
-        'share responsible travel content'
+      id: "p3_var4",
+      topic: "Benefits of Participating in School Co-curricular Activities",
+      centralQuestion: "Why is joining co-curricular activities important for students?",
+      mindMapBubbles: [
+        "Making new friends from different classes",
+        "Building self-confidence in public speaking",
+        "Learning how to work effectively in a team",
+        "Staying physically active and healthy",
+        "Learning time management skills"
       ],
-      decisionQuestion: 'Which idea should receive the most support?'
-    }
-  ],
-
-  part3InteractionMoves: {
-    start: [
-      'To begin with, I think ...',
-      'In my opinion, ...',
-      'I would suggest ...'
-    ],
-    develop: [
-      'This is because ...',
-      'For example, ...',
-      'From my experience, ...',
-      'In this situation, ...'
-    ],
-    invite: [
-      'What do you think?',
-      'Do you agree with this idea?',
-      'Which option would you choose?'
-    ],
-    respond: [
-      'I agree because ...',
-      'I see your point, and I would add that ...',
-      'I understand your idea, but I think ...',
-      'That is possible. However, ...'
-    ],
-    clarify: [
-      'Could you explain that further?',
-      'What do you mean by ...?',
-      'Can you give an example?'
-    ],
-    decide: [
-      'We seem to agree that ...',
-      'After comparing the ideas, we would choose ...',
-      'The strongest option is ... because ...'
-    ]
-  },
-
-  part3Lessons: [
-    {
-      title: 'Meet Part 3',
-      eyebrow: 'Mission 1 · Know the discussion',
-      body: `
-        <p>
-          Part 3 is a collaborative discussion. You share ideas,
-          respond to a partner, develop the interaction, and work
-          towards an outcome.
-        </p>
-        <div class="tip-box">
-          <strong>Timing</strong>
-          <p>The assessment guide gives about 4–5 minutes for Part 3.</p>
-        </div>
-      `
-    },
-    {
-      title: 'Build your first contribution',
-      eyebrow: 'Mission 2 · TAD in discussion',
-      body: `
-        <p>Use TAD to make one clear contribution.</p>
-        <div class="tad-grid">
-          <article class="mini-card formula-t">
-            <h3>Transition</h3>
-            <p>Show that you are starting, responding, or adding a point.</p>
-          </article>
-          <article class="mini-card formula-a">
-            <h3>Answer</h3>
-            <p>State your view or suggestion directly.</p>
-          </article>
-          <article class="mini-card formula-d">
-            <h3>Details</h3>
-            <p>Explain the idea so your partner can respond.</p>
-          </article>
-        </div>
-      `
-    },
-    {
-      title: 'Add useful REES details',
-      eyebrow: 'Mission 3 · Develop your point',
-      body: `
-        <p>
-          A discussion grows when you add relevant support.
-          Choose Research, an Example, an Experience, or a Situation.
-        </p>
-        <div class="question-box">
-          <strong>Example</strong>
-          <p>
-            In my opinion, schools should organise more sports activities.
-            For example, short weekly games can help students become more active.
-          </p>
-        </div>
-      `
-    },
-    {
-      title: 'Listen and respond',
-      eyebrow: 'Mission 4 · Connect with a partner',
-      body: `
-        <p>
-          Do not give separate speeches. Show that you heard the other person.
-        </p>
-        <div class="planning-grid">
-          <article class="mini-card">
-            <h3>Agree and develop</h3>
-            <p>I agree because ...</p>
-            <p>I see your point, and I would add that ...</p>
-          </article>
-          <article class="mini-card">
-            <h3>Disagree politely</h3>
-            <p>I understand your idea, but I think ...</p>
-            <p>That is possible. However, ...</p>
-          </article>
-          <article class="mini-card">
-            <h3>Ask for more</h3>
-            <p>Could you explain that further?</p>
-            <p>Can you give an example?</p>
-          </article>
-          <article class="mini-card">
-            <h3>Invite a view</h3>
-            <p>What do you think?</p>
-            <p>Which option would you choose?</p>
-          </article>
-        </div>
-      `
-    },
-    {
-      title: 'Keep the discussion moving',
-      eyebrow: 'Mission 5 · Interaction loop',
-      body: `
-        <p>Use this simple loop:</p>
-        <div class="question-box">
-          <p><strong>Share → Develop → Invite → Respond → Compare</strong></p>
-        </div>
-        <p>
-          This creates real interaction and helps both speakers
-          maintain and develop the conversation.
-        </p>
-      `
-    },
-    {
-      title: 'Practise one discussion turn',
-      eyebrow: 'Mission 6 · Guided interaction',
-      practice: true,
-      body: `
-        <p>
-          Build one turn that responds to a partner and moves
-          the discussion forward.
-        </p>
-      `
-    },
-    {
-      title: 'Reach a shared decision',
-      eyebrow: 'Mission 7 · Negotiate an outcome',
-      decision: true,
-      body: `
-        <p>
-          Compare two ideas, explain your choice, and write a closing decision.
-        </p>
-      `
-    },
-    {
-      title: 'Part 3 Boss Challenge',
-      eyebrow: 'Mission 8 · Collaborative discussion',
-      challenge: true,
-      body: `
-        <p>
-          Complete a short simulated exchange with a partner.
-          Show a clear idea, useful detail, partner response,
-          invitation, and shared decision.
-        </p>
-      `
+      decisionPhase: "Decide together which benefit is the most valuable for a student's future."
     }
   ]
+};
 
-});
-
+// Expose the data under all common variable names so no script crashes
+window.Data = speakFancyData;
+window.DATA = speakFancyData;
+window.speakFancyData = speakFancyData;
