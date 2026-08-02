@@ -29,17 +29,23 @@
     aria-atomic="true"
   ></div>
 
-  <!-- App Scripts loaded in correct order -->
+  <!-- 1. DATA FIRST -->
   <script src="Data.js"></script>
+
+  <!-- 2. CONFIG & UTILS SECOND -->
   <script src="Config.js"></script>
   <script src="Utils.js"></script>
   <script src="Storage.js"></script>
+  <script src="Voicerecorder.js"></script>
+
+  <!-- 3. VIEWS THIRD -->
   <script src="Dashboard.js"></script>
   <script src="Introduction.js"></script>
   <script src="Part1.js"></script>
   <script src="Part2.js"></script>
   <script src="Part3.js"></script>
-  <script src="Voicerecorder.js"></script>
+
+  <!-- 4. APP LAST -->
   <script src="App.js"></script>
 </body>
 </html>
